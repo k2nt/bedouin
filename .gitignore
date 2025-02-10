@@ -1,0 +1,46 @@
+# Binaries
+*.exe
+*.out
+*.a
+*.o
+*.so
+*.dll
+
+# Build & cache directories
+/bin/
+/pkg/
+/build/
+/dist/
+*.test
+
+# Go module cache (if not using `go mod vendor`)
+/vendor/
+
+# Go workspaces
+*.work
+
+# Logs & debugging files
+*.log
+*.trace
+*.prof
+*.cover
+
+# Editor & OS-specific files
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Go race detector
+*.race
+
+# Test results
+/testdata/
+
+# Cgo generated files
+_cgo_*
+
+# Coverage reports
+coverage.out
+*.cov
