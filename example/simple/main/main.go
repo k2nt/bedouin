@@ -19,7 +19,7 @@ func main() {
 	//)
 	t, err := loadtest.NewSimpleGetConstantLoadTest(codyTestingEndpoint)
 
-	g := generator.NewConstantGenerator(t.Send, true, 1, 30)
+	g := generator.NewConstantGenerator(t.Send, false, 10, 30)
 	g.Run()
 
 	fmt.Println(t.GetPrintableAggStats())
