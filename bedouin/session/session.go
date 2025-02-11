@@ -7,5 +7,5 @@ import (
 
 type Session interface {
 	Submit(req *http.Request) (*http.Response, error)
-	GetAggregateStats() *stats.AggStats
+	GetAggStats() *stats.AggStats
 }

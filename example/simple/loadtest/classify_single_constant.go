@@ -13,6 +13,7 @@ import (
 	"os"
 	"path/filepath"
 	"reflect"
+	"time"
 )
 
 type ClassifySingleConstantLoadTest struct {
@@ -98,6 +99,8 @@ func (t *ClassifySingleConstantLoadTest) Send() {
 
 	req.Header.Set("Content-Type", writer.FormDataContentType())
 
+	startTime := time.Now()
+
 	resp, err := t.hs.Submit(req)
 	if err != nil {
 		fmt.Println(err)
@@ -105,15 +108,17 @@ func (t *ClassifySingleConstantLoadTest) Send() {
 	}
 	defer resp.Body.Close()
 
+	duration := time.Since(startTime)
+
 	//parsedRespBody, err := io.ReadAll(resp.Body)
 	//if err != nil {
 	//	fmt.Println(err)
 	//	return
 	//}
-
+	//
 	//respBody := string(parsedRespBody)
 
-	//fmt.Println("response status:", resp.Status)
+	fmt.Println("ts:", time.Now(), "  response status:", resp.Status, "  response time:", duration)
 	//fmt.Println("response body:", respBody)
 }
 
