@@ -47,6 +47,7 @@ func (c *HttpSession) Submit(req *http.Request) (*http.Response, error) {
 		},
 	)
 
+	//log response detail
 	logger.Log.Info("Received API response",
 		zap.Int("status", resp.StatusCode),
 		zap.Int64("response_time_ms", time.Since(startTime).Milliseconds()),
